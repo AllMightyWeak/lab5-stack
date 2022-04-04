@@ -1,3 +1,5 @@
+//Copyright by AllMightyWeak
+
 #include <iostream>
 
 

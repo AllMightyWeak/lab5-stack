@@ -1,4 +1,4 @@
-//Copyright by C-developers1488
+//Copyright by AllMightyWeak
 
 #include <gtest/gtest.h>
 #include "Stack.hpp"
@@ -8,17 +8,17 @@ TEST(Example, EmptyTest) {
   EXPECT_TRUE(true);
 }
 TEST(First, True) {
-  Stack<int> MySteck;
+  Stack<int> MyStack;
   int t=2;
-  MySteck.push(1);
-  MySteck.push(t);
-  EXPECT_EQ(MySteck.head(), 2);
-  EXPECT_EQ(MySteck.pop(), 2);
-  EXPECT_EQ(MySteck.head(), 1);
-  EXPECT_EQ(MySteck.pop(), 1);
+  MyStack.push(1);
+  MyStack.push(t);
+  EXPECT_EQ(MyStack.head(), 2);
+  EXPECT_EQ(MyStack.pop(), 2);
+  EXPECT_EQ(MyStack.head(), 1);
+  EXPECT_EQ(MyStack.pop(), 1);
   std::string err = "Stack is empty";
   try {
-    MySteck.pop();
+    MyStack.pop();
   }
   catch (std::runtime_error& error) {
     EXPECT_EQ(error.what(), err);
@@ -53,21 +53,21 @@ class Myclass {
   std::string t2;
 };
 TEST(Second, True) {
-  StackTwo<Myclass> MySteck;
+  StackTwo<Myclass> MyStack;
   int t0 = 2;
   double t1 = 2.2;
   std::string t2 = "2";
-  MySteck.push_emplace(Myclass(1, 1.1, "12"));
-  MySteck.push_emplace(t0, t1, t2);
-  MySteck.push(Myclass());
-  EXPECT_EQ(MySteck.pop().t2, "0");
-  EXPECT_EQ(MySteck.head().t0, 2);
-  EXPECT_EQ(MySteck.pop().t1, 2.2);
-  EXPECT_EQ(MySteck.head().t0, 1);
-  EXPECT_EQ(MySteck.pop().t2, "12");
+  MyStack.push_emplace(Myclass(1, 1.1, "12"));
+  MyStack.push_emplace(t0, t1, t2);
+  MyStack.push(Myclass());
+  EXPECT_EQ(MyStack.pop().t2, "0");
+  EXPECT_EQ(MyStack.head().t0, 2);
+  EXPECT_EQ(MyStack.pop().t1, 2.2);
+  EXPECT_EQ(MyStack.head().t0, 1);
+  EXPECT_EQ(MyStack.pop().t2, "12");
   std::string err = "Stack is empty";
   try {
-    MySteck.pop();
+    MyStack.pop();
   }
   catch (std::runtime_error& error) {
     EXPECT_EQ(error.what(), err);
